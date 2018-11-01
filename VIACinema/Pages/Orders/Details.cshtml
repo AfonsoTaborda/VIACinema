@@ -1,0 +1,36 @@
+@page
+@model VIA_Cinema.Pages.Orders.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.Movie.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order.Movie.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.OrderDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order.OrderDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.Quantity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order.Quantity)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="../Profile">Back to List</a>
+</div>

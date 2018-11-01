@@ -1,0 +1,60 @@
+@page
+@model VIA_Cinema.Pages.Orders.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    List<SelectListItem> rowsAvailListItems = new List<SelectListItem>();
+    foreach(var kvp in Model.GetAvailableSeats())
+    {
+        foreach (var seat in kvp.Value)
+        {
+            rowsAvailListItems.Add(new SelectListItem()
+            {
+                Text = kvp.Key + seat.displayNum.ToString(),
+                Value = seat.id.ToString()
+            });
+        }
+    };
+
+}
+
+
+<h2>Order Ticket</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Order.OrderDate" class="control-label"></label>
+                <input asp-for="Order.OrderDate" class="form-control" />
+                <span asp-validation-for="Order.OrderDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.Quantity" class="control-label"></label>
+                <input asp-for="Order.Quantity" class="form-control" />
+                <span asp-validation-for="Order.Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.Movie" class="control-label"></label>
+                <select asp-for="Order.MovieId" class="form-control"
+                        asp-items="@Model.MovieNameSL">
+                    <option value="">-- Select Movie --</option>
+                </select>
+                <span asp-validation-for="Order.MovieId" class="text-danger" />
+            </div>
+            <div>
+                <label>Choose your seat(s)</label>
+                @Html.DropDownList("-- Choose a row number --", rowsAvailListItems)
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Pay" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="../Movies/Index">Back to List</a>
+</div>

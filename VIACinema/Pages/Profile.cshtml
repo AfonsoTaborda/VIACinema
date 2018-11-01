@@ -1,0 +1,52 @@
+﻿@page
+@model VIACinema.Pages.ProfileModel
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<h2>Profile</h2>
+
+<h3>@User.Identity.Name</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Movie.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].OrderDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].SeatNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Order.Where(o => o.UserName == User.Identity.Name))
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Movie.Name)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SeatNumber)
+                </td>
+                <td>
+                    <a asp-page="./Orders/Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Orders/Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
