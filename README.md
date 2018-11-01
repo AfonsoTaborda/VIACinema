@@ -1,6 +1,7 @@
 1 - To run the project you need to have SQL Express installed
 
 2 - The following API functions are available:
+
     - /api/Cinema/Movies    Returns all movies in the database
     - /api/Cinema/Movies/id     Returns the movie regarding id
     - /api/Cinema/Orders    Returns all orders in the database
