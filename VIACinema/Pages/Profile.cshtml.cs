@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using VIACinema.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace VIA_Cinema.Pages
+namespace VIACinema.Pages
 {
     public class ProfileModel : PageModel
     {
