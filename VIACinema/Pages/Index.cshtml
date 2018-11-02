@@ -4,7 +4,21 @@
     ViewData["Title"] = "Home page";
 }
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+<style>
+    .carousel {
+        width: 360px;
+        height: 160px;
+    }
+    .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
+        right: 0;
+    }
+
+    .carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+        left: 0;
+    }
+</style>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000" style="position: fixed; bottom: 70%; right: 43%;">
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -14,9 +28,9 @@
         <div class="item active">
             <img src="~/images/JasonBourne.jpg" alt="ASP.NET" class="img-responsive" width="600" />
             <div class="carousel-caption" role="option">
-                <p>
+                <p style="font-size:100%;">
                     Learn how to build ASP.NET apps that can run anywhere.
-                    <a class="btn btn-default" href="/Movies/Index">
+                    <a class="btn btn-default" href="/Movies/Index" style="font-size:110%;">
                         Learn More
                     </a>
                 </p>
@@ -25,9 +39,9 @@
         <div class="item">
             <img src="~/images/KillBill1.jpg" alt="Visual Studio" class="img-responsive" width="600" />
             <div class="carousel-caption" role="option">
-                <p>
+                <p style="font-size:100%;">
                     There are powerful new features in Visual Studio for building modern web apps.
-                    <a class="btn btn-default" href="/Movies/Index">
+                    <a class="btn btn-default" href="/Movies/Index" style="font-size:110%;">
                         Learn More
                     </a>
                 </p>
@@ -36,9 +50,9 @@
         <div class="item">
             <img src="~/images/Prisoners.jpg" alt="Package Management" class="img-responsive" width="600" />
             <div class="carousel-caption" role="option">
-                <p>
+                <p style="font-size:100%;">
                     Bring in libraries from NuGet and npm, and automate tasks using Grunt or Gulp.
-                    <a class="btn btn-default" href="/Movies/Index">
+                    <a class="btn btn-default" href="/Movies/Index" style="font-size:110%;">
                         Learn More
                     </a>
                 </p>
@@ -53,44 +67,4 @@
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
-</div>
-
-<div class="row">
-    <div class="col-md-3">
-        <h2>Application uses</h2>
-        <ul>
-            <li>Sample pages using ASP.NET Core Razor Pages</li>
-            <li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>
-        </ul>
-    </div>
-    <div class="col-md-3">
-        <h2>How to</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?linkid=852130">Working with Razor Pages.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699315">Manage User Secrets using Secret Manager.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699316">Use logging to log a message.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699317">Add packages using NuGet.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699319">Target development, staging or production environment.</a></li>
-        </ul>
-    </div>
-    <div class="col-md-3">
-        <h2>Overview</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=518008">Conceptual overview of what is ASP.NET Core</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699320">Fundamentals of ASP.NET Core such as Startup and middleware.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=398602">Working with Data</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=398603">Security</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=699321">Client side development</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=699322">Develop on different platforms</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=699323">Read more on the documentation site</a></li>
-        </ul>
-    </div>
-    <div class="col-md-3">
-        <h2>Run &amp; Deploy</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=517851">Run your app</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=517853">Run tools such as EF migrations and more</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=398609">Publish to Microsoft Azure App Service</a></li>
-        </ul>
-    </div>
 </div>
