@@ -11,4 +11,4 @@
     
     Note:
         - The seats ordered cannot be displayed in the profile due to problems with conversion
-        - Project is created in Visual Studio 2017
+        - Project has been created in Visual Studio 2017
